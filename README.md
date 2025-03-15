@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# RabbitMail
+RabbitMail automates email processing and sentiment analysis. It retrieves unread Gmail messages, cleans them with Llama3, analyzes sentiment, and publishes negative emails to RabbitMQ using a fanout exchange for multiple consumers.
+=======
+>>>>>>> 7fb05e4 (Resolve merge conflicts)
 # Automating Email Processing and Sentiment Analysis with RabbitMQ, Ollama, and Gmail API  
 
 ## 1. Introduction  
@@ -18,6 +25,13 @@ The architecture consists of three main components:
 - **RPC Client** – Sends the email content to `Ollama` for cleaning and sentiment analysis  
 - **Worker** – Handles negative sentiment emails and sends alerts via `SMTP`
 - Communication between services is managed using `RabbitMQ` queues.  
+
+### RabbitMQ and RPC Integration  
+`RabbitMQ` serves as the central messaging broker, enabling communication between the components.  
+
+- The **RPC (Remote Procedure Call)** mechanism allows the `RPC Client` to request and receive email data from the `RPC Server` through `RabbitMQ` queues.  
+- `RabbitMQ` ensures asynchronous communication and reliable message delivery, making the system more scalable and fault-tolerant.  
+- This architecture allows multiple services to work together seamlessly without direct dependencies, increasing overall system flexibility. 
 
 ## 3. Setting Up the Environment  
 
@@ -704,4 +718,9 @@ We’ve built a complete end-to-end solution to automate email processing using 
 - **Multi-Agent Architecture** – Allow parallel processing for more complex agent networks.  
 - **Contextual Awareness** – Improve sentiment accuracy with conversation history.  
 
+<<<<<<< HEAD
 This solution serves as a foundational step toward building a fully autonomous `Agentic AI` system.
+=======
+This solution serves as a foundational step toward building a fully autonomous `Agentic AI` system.
+>>>>>>> 116463f (Initial commit)
+>>>>>>> 7fb05e4 (Resolve merge conflicts)
