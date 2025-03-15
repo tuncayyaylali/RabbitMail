@@ -158,7 +158,13 @@ Here’s the core logic for processing the email content and sending alerts:
 See the complete logic for processing email content and sending alerts in [`rabbitmq_worker.py`](./rabbitmq_worker.py)
 
 ## 7. Testing the Pipeline  
-To test the pipeline, I sent four test emails to my `Gmail` account defined in `TARGET_EMAIL`:  
+To test the pipeline, I first ran the following three files in separate terminals:
+
+- `rpc_server.py` – To fetch and process emails from Gmail.
+- `rpc_client.py` – To clean and analyze the sentiment of the emails.
+- `rabbitmq_worker.py` – To send alerts for negative sentiment emails.
+
+Once all three components were running, I sent four test emails to my `Gmail` account defined in `TARGET_EMAIL`:
 
 - *"Sunumda her ne kadar beni hiç biriniz dinlemiş olsa da geldiğiniz için yine de teşekkür ederim."*  
    - This email was correctly identified as `sarcastic` marked as `negative` — An alert was sent to `ALERT_RECIPIENT`.  
