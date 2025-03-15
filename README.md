@@ -19,7 +19,7 @@ The primary objective of this project was to build a system capable of:
 
 ### 1.2. Scope
 - The system is designed to handle high volumes of emails without performance degradation.
-- Sarcasm detection is handled explicitly by fine-tuning the prompt for `Llama3`.
+- Sarcasm detection is handled solely through prompt engineering for `Llama3`, without fine-tuning.
 - The system is designed to be scalable and adaptable for other `NLP` tasks.
 
 ### 1.3. Methodology
