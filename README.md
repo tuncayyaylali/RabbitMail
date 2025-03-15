@@ -4,15 +4,52 @@ RabbitMail automates email processing and sentiment analysis. It retrieves unrea
 # Automating Email Processing and Sentiment Analysis with RabbitMQ, Ollama, and Gmail API  
 
 ## 1. Introduction  
-Automating email processing and sentiment analysis can significantly improve efficiency in handling large volumes of emails. In this article, I will walk you through a complete solution for:  
+In the era of rapid digital communication, the volume of emails received daily has become overwhelming. Important messages often get lost in the clutter, and manually sorting through emails is both time-consuming and inefficient. Additionally, understanding the tone and sentiment of emails (especially sarcasm and negativity) is crucial for effective communication and decision-making.
 
-- Fetching emails using the `Gmail API`  
-- Cleaning and formatting email content with `Ollama`  
-- Analyzing the sentiment of emails using `Ollama`  
-- Using `RabbitMQ` to handle message queues and communication between services  
-- Sending negative sentiment alerts via `SMTP`  
+I embarked on this project to create a fully automated pipeline that not only fetches emails but also analyzes their sentiment and reacts to negative or sarcastic messages in real time. The goal was to combine the power of machine learning, natural language processing (NLP), and message queueing to handle complex email processing tasks with minimal human intervention.
 
-We’ll set up the entire solution using `Docker`, and you’ll have a fully functional pipeline at the end.  
+### 1.1. Objective and Scope
+
+The primary objective of this project was to build a system capable of:
+- Automating email retrieval from a target inbox using `Gmail API`
+- Cleaning and formatting email content using `Ollama` (`Llama3 model`)
+- Performing sentiment analysis to identify positive, negative, and sarcastic emails
+- Leveraging `RabbitMQ` as a message broker to handle asynchronous communication
+- Sending real-time alerts for negative or sarcastic emails using `SMTP`
+
+### 1.2. Scope
+- The system is designed to handle high volumes of emails without performance degradation.
+- Sarcasm detection is handled explicitly by fine-tuning the prompt for `Llama3`.
+- The system is designed to be scalable and adaptable for other `NLP` tasks.
+
+### 1.3. Methodology
+The project was implemented using a structured methodology:
+
+- Design and Planning
+   - Defined project scope and objectives.
+   - Evaluated potential tools and technologies (e.g., `Ollama`, `RabbitMQ`, `Gmail API`).
+   - Designed the overall architecture, including component communication via `RabbitMQ`.
+- Implementation
+   - Set up the development environment using Docker.
+   - Developed three key components:
+      - `RPC Server` – For email fetching and processing.
+      - `RPC Client` – For content cleaning and sentiment analysis.
+      - `Worker` – For sending alerts via `SMTP`.
+   - Configured `OAuth 2.0` for `Gmail API` authentication.
+   - Defined `Llama3` prompt for cleaning and sentiment analysis.
+- Testing and Debugging
+   - Sent multiple test emails covering different scenarios (positive, negative, and sarcastic).
+   - Evaluated system response time and accuracy.
+- Deployment
+   - Deployed the solution using `Docker`.
+   - Ensured `RabbitMQ` handled asynchronous processing without bottlenecks.
+- Monitoring and Optimization
+   - Added logging and monitoring for performance tracking.
+
+### 1.4. Challenges
+- OAuth 2.0 Complexity: Setting up `Gmail API` `OAuth` authentication required detailed configuration and token handling.
+- Concurrency Handling: `RabbitMQ` message processing required careful configuration to avoid race conditions.
+- SMTP Authentication: `Gmail` `SMTP` authentication required creating an app password due to Google’s security policies.
 
 ## 2. Architecture Overview  
 The architecture consists of three main components:  
