@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 # RabbitMail
 RabbitMail automates email processing and sentiment analysis. It retrieves unread Gmail messages, cleans them with Llama3, analyzes sentiment, and publishes negative emails to RabbitMQ using a fanout exchange for multiple consumers.
-=======
->>>>>>> 7fb05e4 (Resolve merge conflicts)
+
 # Automating Email Processing and Sentiment Analysis with RabbitMQ, Ollama, and Gmail API  
 
 ## 1. Introduction  
@@ -718,9 +714,5 @@ We’ve built a complete end-to-end solution to automate email processing using 
 - **Multi-Agent Architecture** – Allow parallel processing for more complex agent networks.  
 - **Contextual Awareness** – Improve sentiment accuracy with conversation history.  
 
-<<<<<<< HEAD
 This solution serves as a foundational step toward building a fully autonomous `Agentic AI` system.
-=======
-This solution serves as a foundational step toward building a fully autonomous `Agentic AI` system.
->>>>>>> 116463f (Initial commit)
 >>>>>>> 7fb05e4 (Resolve merge conflicts)
