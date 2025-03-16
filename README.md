@@ -200,7 +200,7 @@ To test the pipeline, I first ran the following three files in separate terminal
 
 Once all three components were running, I sent four test emails to my `Gmail` account defined in `TARGET_EMAIL`:
 
-- *"Sunumda her ne kadar beni hiç biriniz dinlemiş olsa da geldiğiniz için yine de teşekkür ederim."*  
+- *"Sunumda her ne kadar beni hiç biriniz dinlememiş olsa da geldiğiniz için yine de teşekkür ederim."*  
    - This email was correctly identified as `sarcastic` marked as `negative` — An alert was sent to `ALERT_RECIPIENT`.  
 
 - *"Sunuma iştirak ettiğiniz için hepinize teşekkür ederim."*  
