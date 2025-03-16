@@ -56,6 +56,8 @@ The architecture consists of three main components:
 - **Worker** – Handles negative sentiment emails and sends alerts via `SMTP`
 - Communication between services is managed using `RabbitMQ` queues.  
 
+![Arcitecture](./images/Animation.gif)
+
 ### 2.1. RabbitMQ and RPC Integration  
 `RabbitMQ` serves as the central messaging broker, enabling communication between the components.  
 
